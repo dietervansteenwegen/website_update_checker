@@ -6,6 +6,7 @@ __author__ = 'Dieter Vansteenwegen'
 __project__ = 'Website_update_checker'
 __project_link__ = 'https://www.vansteenwegen.org'
 
+
 from checker import check_for_updates
 from get_info import get_arguments, get_matrix_info, get_previous_data
 from log.log import add_rotating_file, setup_logger
