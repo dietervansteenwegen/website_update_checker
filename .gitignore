@@ -119,3 +119,4 @@ logs/
 *.db
 sourcetrail/
 generated/
+config.ini
