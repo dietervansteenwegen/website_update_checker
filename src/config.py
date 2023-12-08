@@ -14,26 +14,32 @@ from pathlib import Path
 from typing import Iterator
 
 log = logging.getLogger(__name__)
+PROGRAM_DESCRIPTION: str = 'Check if websites have updates.'
 
 
 class HelpfullArgumentParser(argparse.ArgumentParser):
     def error(self, msg):
         import sys
 
-        print(f"This probably isn't what you intended to do: {msg}")
-        self.print_usage()
+        print(f'\nERROR: {msg}\n\n')
+        self.print_help()
         sys.exit(2)
 
 
 def get_arguments() -> argparse.Namespace:
-    parser = HelpfullArgumentParser(add_help=True)
+    parser = HelpfullArgumentParser(
+        add_help=True,
+        description=PROGRAM_DESCRIPTION,
+    )
 
-    parser.add_argument(
+    required_args = parser.add_argument_group('Required arguments')
+    required_args.add_argument(
         '-c',
         '--config_file',
         help='Location of the config file functionality.',
         action='store',
         dest='config_file',
+        required=True,
     )
 
     return parser.parse_args()

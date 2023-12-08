@@ -5,7 +5,7 @@ name = 'Website_update_checker' # No_spaces_allowed
 readme = 'README.md'
 version = '0.1.0'
 description = 'Python template'
-# license = { file = 'LICENSE.txt' }
+license = { file = 'LICENSE' }
 keywords = ['Test']
 authors = [
     { email = 'news1@vansteenwegen.org' },
