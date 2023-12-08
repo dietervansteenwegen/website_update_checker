@@ -21,14 +21,15 @@ dynamic = ["dependencies"]
 [project.urls]
 Homepage = 'https://www.vansteenwegen.org'
 Repository = 'https://github.com/dietervansteenwegen/Website_update_checker.git'
-# Changelog = 'https://github.com/me/spam/blob/master/CHANGELOG.md'
+Changelog = 'https://github.com/dietervansteenwegen/website_update_checker/blob/master/CHANGELOG.md'
 
 [project.scripts]
-my-package-script = 'src.main:main'
+website_update_check = 'main:main'
 
 
 [build-system]
 requires = ['setuptools', 'setuptools-scm']
+build-backend = "setuptools.build_meta"
 
 [tool.setuptools.dynamic]
 dependencies = { file = ["requirements.txt"] }
@@ -36,7 +37,7 @@ dependencies = { file = ["requirements.txt"] }
 [tool.setuptools.packages.find]
 where = ['src'] # list of folders that contain the packages (['.'] by default)
 include = [
-    'package_dir',
+    # 'src',
 ] # package names should match these glob patterns (['*'] by default)
 # exclude = ['my_package.tests*'] # exclude packages matching these glob patterns (empty by default)
 
