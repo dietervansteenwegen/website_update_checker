@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 __author__ = 'Dieter Vansteenwegen'
-__project__ = 'Iana'
+__project__ = 'Website_update_checker'
 __project_link__ = 'https://www.vansteenwegen.org'
 
 import datetime as dt
