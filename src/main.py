@@ -18,8 +18,11 @@ def main():
     config = Config()
 
     changed_urls = check_for_updates(config=config)
-    if changed_urls:
-        send_changed_urls(changed_urls=changed_urls, config=config)
+    if changed_urls and send_changed_urls(
+        changed_urls=changed_urls,
+        config=config,
+    ):
+        config.commit_changes()
 
 
 if __name__ == '__main__':

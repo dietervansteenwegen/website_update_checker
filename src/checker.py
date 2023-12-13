@@ -53,7 +53,7 @@ def check_for_updates(config: Config) -> list:
     return urls_with_changes
 
 
-def send_changed_urls(changed_urls: list, config=Config):
+def send_changed_urls(changed_urls: list, config=Config) -> bool:
     import platform
 
     if platform.system() == 'Windows':
@@ -64,6 +64,7 @@ def send_changed_urls(changed_urls: list, config=Config):
             matrix_conf=config.matrix_config(),
         ),
     )
+    return True
 
 
 async def send_matrix(urls: list[str], matrix_conf: dict[str]) -> None:

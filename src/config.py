@@ -53,7 +53,7 @@ class Config:
 
     def _get_config_file(self) -> None:
         self.conf_path = Path(get_arguments().config_file)
-        if not self.conf_path.is_file:
+        if not self.conf_path.is_file():
             err_msg = f'Config file {self.conf_path} is not a file.'
             raise FileNotFoundError(err_msg)
         log.debug(f'Using config file {self.conf_path}')
@@ -80,6 +80,8 @@ class Config:
 
     def update_sha256(self, url: str, new_sha256: str) -> None:
         self.parser.set('urls', option=url, value=new_sha256)
+
+    def commit_changes(self) -> None:
         with self.conf_path.open('w') as target:
             self.parser.write(target)
 
