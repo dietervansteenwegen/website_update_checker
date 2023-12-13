@@ -28,7 +28,8 @@ class MatrixClient:
         log.debug('Logged in.')
 
     async def _msg_callback(self, room: MatrixRoom, event: RoomMessageText) -> None:
-        print(f'{room.room_id}| {room.user_name(event.sender)} | {event.body}')
+        # print(f'{room.room_id}| {room.user_name(event.sender)} | {event.body}')
+        pass
 
     async def send_room_msg(self, room_id: str, msg_text: str = '') -> None:
         log.debug('Sending message')
